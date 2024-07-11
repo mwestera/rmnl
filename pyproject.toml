@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rmnl"
+version = "0.1"
+authors = [{name="Matthijs Westera", email="m.westera@hum.leidenuniv.nl"}]
+description = "Remove newlines, except (optionally) double newlines or newlines after punctuation."
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["pyperclip"]
+
+[project.scripts]
+rmnl = "rmnl:main"
+
+[project.urls]
+"Homepage" = "https://github.com/mwestera/rmnl"
+"Bug Tracker" = "https://github.com/mwestera/rmnl/issues"

@@ -25,7 +25,7 @@ def main():
     else:
         text = args.text.read()
 
-    newline_marker = '!@#$*(&^%$#@!#$*($@#%*&%^#$@!$*'
+    newline_marker = '<<REINSERT_NEWLINE_HERE>>'
     while newline_marker in text:
         logging.warning('Lol impossible.')
         chars = list(newline_marker)
@@ -41,8 +41,7 @@ def main():
     text = re.sub(r' +', ' ', text)
     text = re.sub(r'\n ', '\n', text)
 
-    if args.punct or args.double:
-        text = text.replace(newline_marker, '\n')
+    text = text.replace(newline_marker, '\n')
 
     if args.clipboard:
         pyperclip.copy(text)

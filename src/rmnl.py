@@ -32,6 +32,8 @@ def main():
         random.shuffle(chars)
         newline_marker = ''.join(chars)
 
+    text = re.sub(r'\r\n|\r|\n', '\n', text)    # or str.splitlines?
+
     if args.punct:
         text = re.sub(r'([.?!])\n', f'\1{newline_marker}', text)
     if args.double:
